@@ -8,15 +8,16 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'cd Test'
-        sh 'g++ test_add.cpp -lgtest -lgtest_main -lgmock -pthread -o test_add'
+        sh '''cd Test
+        g++ test_add.cpp -lgtest -lgtest_main -lgmock -pthread -o test_add
+        ./test_add'''
       }
     }
 
     stage('Deliver') {
       steps {
-        sh 'g++ app.cpp -o app'
-        sh './app'
+        sh '''g++ app.cpp -o app
+        ./app'''
       }
     }
 
