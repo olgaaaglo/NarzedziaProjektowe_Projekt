@@ -6,6 +6,7 @@ pipeline {
       script {
         docker.build("${imageName}")
     }
+    }
     stage('Test') {
       agent {
        docker {
