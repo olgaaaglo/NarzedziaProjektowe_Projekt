@@ -11,7 +11,7 @@ pipeline {
         sh '''
         mkdir googletest
         cd googletest
-        google clone https://github.com/google/googletest.git
+        git clone https://github.com/google/googletest.git
         cd googletest
         mkdir build
         cd build
